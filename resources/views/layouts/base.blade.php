@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="shortcut icon" href="{{asset('img/logo.ico')}}" type="image/x-icon">
 </head>
-    <body class="d-flex flex-column">
+    <body>
         <div id="app">
 
             @include('includes.header')

@@ -1,12 +1,12 @@
 @extends('layouts.base')
 
 
-@section('page-name', " вход")
+@section('page-name', "Вход")
 
 
 @section('page-content')
-        <span class="title">ВХОД</span>
         <div class="form_div">
+            <span class="title">ВХОД</span>
             <form action="/login" method="post">
                 @csrf
                 <input type="text" class="input" id="email" placeholder="Почта">
@@ -18,7 +18,14 @@
                 @error('password')
                     <div class="danger_text">{{$message}}</div>
                 @enderror
+
+                <div class="checkbox">
+                    <input type="checkbox" name="gender" value=1 checked>
+                    <label for="radio-1">Запомнить меня</label>
+                </div>
+
                 <input class="submit" type="submit" value="Войти">
             </form>
+            <a href="/register" class="text_route">Новинкий, тогда тебе на [РЕГЕСТРАЦИЯ]</a>
         </div>
 @endsection

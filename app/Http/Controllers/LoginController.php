@@ -6,14 +6,14 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use app\models\User;
+use App\Models\User;
 
 class LoginController extends Controller
 {
     public function index()
         {
             if(Auth::check()){
-                return redirect('posts.index');
+                return redirect(route('posts.index'));
             }
             else {
                 return view('login.index');
@@ -28,12 +28,11 @@ class LoginController extends Controller
         ]);
 
         if ($validation->fails()) {
-            return redirect('login.index')->withErrors($validation)->withInput();
+            return redirect(route('login.index'))->withErrors($validation)->withInput();
         }
         
         if(Auth::attempt($validate)){
-            return redirect('posts.index');
-        }
-        
+            return redirect(route('posts.index'));
+        }      
     }    
 }

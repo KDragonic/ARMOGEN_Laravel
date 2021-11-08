@@ -12,22 +12,14 @@ use Illuminate\Support\Facades\Route;
 Route::redirect('/', '/login')->name('home.redirect');
 
 
+    Route::get('/login', [LoginController::class, 'index'])->name('login.index');
+    
+    Route::post('/login', [LoginController::class, 'store'])->name('login.store');
 
-Route::name('login.')->group(function(){ 
-    
-    Route::get('/login', [LoginController::class, 'index'])->name('index');
-    
-    Route::post('/login', [LoginController::class, 'store'])->name('store');
-    
-});
 
-Route::name('register.')->group(function(){ 
+    Route::get('/register', [RegisterController::class, 'index'])->name('register.index');
     
-    Route::get('/register', [RegisterController::class, 'index'])->name('index');
-    
-    Route::post('/register', [RegisterController::class, 'store'])->name('store');
-
-});
+    Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
 
 Route::middleware('auth')->group(function () {
 

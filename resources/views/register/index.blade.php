@@ -6,6 +6,7 @@
 
 @section('page-content')
     <div class="form_div">
+        <span class="title">РЕГЕСТРАЦИЯ</span>
          <form action="/register" method="post">
             @csrf
             <input type="text" class="input" id="name" name="name" placeholder="Имя">
@@ -51,9 +52,8 @@
                 <div class="danger_text">{{$message}}</div>
             @enderror
 
-
-
             <input class="submit" type="submit" value="Регестрация">
         </form>
+        <a href="/login" class="text_route">Уже тут бывал тогда тебе на [ВХОД]</a>
     </div>
 @endsection

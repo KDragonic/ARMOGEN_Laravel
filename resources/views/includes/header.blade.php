@@ -16,29 +16,34 @@
     </div> --}}
 
     @guest
-        <a href="{{route('login.index')}}" class="user_icon">
-            <div>
-                <h3>Вход</h3>
-            </div>
-        </a>
+        <div class="reg_log_icon">
+            <a href="{{route('login.index')}}" class="text">
+                Вход
+            </a>
+        </div>
     @endguest
 
     @auth
-    <div class="items">
-        <a href="">
-            <div class="item item_1"><img src="{{asset('img/Свиток.png')}}" alt="[img]"></div>
-        </a>
-        <a href="">
-            <div class="item item_2"><img src="{{asset('img/Группа людей.png')}}" alt="[img]"></div>
-        </a>
-        <a href="">
-            <div class="item item_3"><img src="{{asset('img/Кубок.png')}}" alt="[img]"></div>
-        </a>
-    </div>
-    <a href="" class="user_icon">
-        <div>
-            <img src="{{asset('img/Аватар.png')}}" alt="[img]">
+        <div class="items">
+            <a href="">
+                <div class="item item_1"><img src="{{asset('img/Свиток.png')}}" alt="[img]"></div>
+            </a>
+            <a href="">
+                <div class="item item_2"><img src="{{asset('img/Группа людей.png')}}" alt="[img]"></div>
+            </a>
+            <a href="">
+                <div class="item item_3"><img src="{{asset('img/Кубок.png')}}" alt="[img]"></div>
+            </a>
         </div>
-    </a>
+        {{-- <a href="" class="user_icon">
+            <div>
+                <img src="{{asset('img/Аватар.png')}}" alt="[img]">
+            </div>
+        </a> --}}
+        <div class="reg_log_icon">
+            <a href="{{route('login.index')}}" class="text">
+                Выход
+            </a>
+        </div>
     @endauth
 </header>

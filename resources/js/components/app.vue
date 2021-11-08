@@ -1,6 +1,3 @@
-<template>
-    <h1>Компонент</h1>
-</template>
 <script>
 export default {
     data () {

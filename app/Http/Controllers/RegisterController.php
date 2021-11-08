@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
+use App\Models\User;
 
 class RegisterController extends Controller
 {
@@ -20,7 +20,7 @@ class RegisterController extends Controller
             // }
 
             $validation = Validator::make($req->all(), [
-                "nickname" => "required|unique:users",
+                "name" => "required|unique:users",
                 "email" => "required|email|unique:users",
                 "password" => "required|min:5",
                 're_password' => 'required|min:5|same:password',
@@ -28,8 +28,9 @@ class RegisterController extends Controller
             ]);
 
             if ($validation->fails()) {
-                return redirect('register.index')->withErrors($validator)->withInput();
+                return redirect(route('register.index'))->withErrors($validation)->withInput();
             }
+
             
             // DB::table('users')->insert([
             //     [
@@ -44,15 +45,15 @@ class RegisterController extends Controller
             $user = new User();
 
             $user->name = $req->input('name');
-            $user->name = $req->input("email");
-            $user->name = bscrypt($req->input("password"));
-            $user->name = $req->input("gender");
+            $user->email = $req->input("email");
+            $user->password = bcrypt($req->input("password"));
+            $user->gender = $req->input("gender");
 
             $user->save();
 
             Auth::login($user);
 
-            return redirect(route("posts.index"));
+            return redirect(route("login.index"));
         }    
 }    
 
