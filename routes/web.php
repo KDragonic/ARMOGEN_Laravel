@@ -11,21 +11,25 @@ Route::redirect('/', '/login')->name('home.redirect');
 
 
 
-// Route::name('user.')->group(function(){ 
+Route::name('login.')->group(function(){ 
     
-    Route::get('/login', [LoginController::class, 'index'])->name('login.index');
+    Route::get('/login', [LoginController::class, 'index'])->name('index');
     
-    Route::post('/login', [LoginController::class, 'store'])->name('login.store');
+    Route::post('/login', [LoginController::class, 'store'])->name('store');
     
-    Route::get('/register', [RegisterController::class, 'index'])->name('register.index');
-    
-    Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
-    
-// });
+});
 
+Route::name('register.')->group(function(){ 
+    
+    Route::get('/register', [RegisterController::class, 'index'])->name('index');
+    
+    Route::post('/register', [RegisterController::class, 'store'])->name('store');
+    
+    
+});
 
 Route::middleware('auth')->group(function () {
-    Route::get('/logout', [UserController::class, 'logout'])->name('logout')->middleware('auth');
+    Route::get('/logout', [UserController::class, 'logout'])->name('logout');
     
-    Route::get('/posts', [PostController::class, 'index'])->middleware('auth')->name('posts.index');
+    Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
 });
