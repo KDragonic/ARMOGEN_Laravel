@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
-class RegisterController extends Controller
+class UserController extends Controller
 {
     public function index()
     {
@@ -15,6 +15,6 @@ class RegisterController extends Controller
     public function logout()
     {
         Auth::logout();
-        return redirect('login.index');
+        return redirect(route('login.index'));
     }  
 }

@@ -41,7 +41,7 @@
             </div>
         </a> --}}
         <div class="reg_log_icon">
-            <a href="{{route('login.index')}}" class="text">
+            <a href="{{route('logout.index')}}" class="text">
                 Выход
             </a>
         </div>

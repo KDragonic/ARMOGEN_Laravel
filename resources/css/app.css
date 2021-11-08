@@ -22,8 +22,19 @@ footer p{
     margin-left: 16px;
 }
 
-header .user_icon{
+.reg_log_icon{
+    position: absolute;
+    align-items: center;
+    height: 70px;
+    right: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+}
 
+.reg_log_icon a{
+    font-size: 27pt;
+    text-decoration: none;
+    color: #fff;
 }
 
 header .items{
@@ -40,13 +51,14 @@ header .item{
     padding: 7px;
 }
 
-header .items a:hover div, .user_icon:hover {
+header .items a:hover div, .user_icon:hover, .reg_log_icon:hover {
     background-color: rgba(49, 49, 49, 0.397);
 }
 
 header .item  img{
     width: 55px;
 }
+
 
 .user_icon{
     position: absolute;
@@ -58,6 +70,11 @@ header .item  img{
 
 .user_icon div{
     margin-left: 5px;
+}
+
+.checkbox{
+    color: #fff;
+    font-size: 15pt;
 }
 
 .form_div{
@@ -89,7 +106,13 @@ header .item  img{
     background-color: #454545;
     color: #fff;
     font-size: 30pt;
+    
 }
+
+.form_div .input:enabled{
+    border: 0;
+}
+
 
 /* input:focus {
     filter: blur(0px);

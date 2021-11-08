@@ -23,7 +23,7 @@ Route::redirect('/', '/login')->name('home.redirect');
 
 Route::middleware('auth')->group(function () {
 
-    Route::get('/logout', [UserController::class, 'logout'])->name('logout');
+    Route::get('/logout', [UserController::class, 'logout'])->name('logout.index');
     
     Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
 });
