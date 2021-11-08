@@ -34,5 +34,4 @@ Route::middleware('auth')->group(function () {
     Route::get('/logout', [UserController::class, 'logout'])->name('logout');
     
     Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
-
 });

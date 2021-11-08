@@ -49,6 +49,10 @@ class RegisterController extends Controller
             $user->name = $req->input("gender");
 
             $user->save();
+
+            Auth::login($user);
+
+            return redirect(route("posts.index"));
         }    
 }    
 

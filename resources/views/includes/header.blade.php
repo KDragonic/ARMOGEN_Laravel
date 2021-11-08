@@ -18,7 +18,7 @@
     @guest
         <a href="{{route('login.index')}}" class="user_icon">
             <div>
-                <a href=""></a> Вход
+                <h3>Вход</h3>
             </div>
         </a>
     @endguest
@@ -41,5 +41,4 @@
         </div>
     </a>
     @endauth
-
 </header>
