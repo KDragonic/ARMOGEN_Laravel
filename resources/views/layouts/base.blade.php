@@ -9,17 +9,17 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="shortcut icon" href="{{asset('img/logo.ico')}}" type="image/x-icon">
 </head>
-<body class="d-flex flex-column">
-    {{-- <div id="app"> --}}
+    <body class="d-flex flex-column">
+        <div id="app">
 
-    @include('includes.header')
+            @include('includes.header')
 
-    @yield('page-content')  
+            @yield('page-content')  
 
-    {{-- @include('includes.footer') --}}
+            {{-- @include('includes.footer') --}}
 
-    {{-- </div> --}}
+        </div>
 
-    <script src="{{mix('js/app.js')}}"></script>
-</body>
+        <script src="{{mix('js/app.js')}}"></script>
+    </body>
 </html>
