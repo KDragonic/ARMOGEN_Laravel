@@ -31,7 +31,7 @@ class LoginController extends Controller
             return redirect(route('login.index'))->withErrors($validation)->withInput();
         }
         
-        if(Auth::attempt($validate)){
+        if(Auth::attempt($validation)){
             return redirect(route('posts.index'));
         }      
     }    
