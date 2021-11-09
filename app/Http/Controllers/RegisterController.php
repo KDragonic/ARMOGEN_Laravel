@@ -42,6 +42,13 @@ class RegisterController extends Controller
             //   ]);
             // return view('login.index');
 
+            if(User::where('email', $validation['email']->exists()))
+            {
+                return redirect(route('registet.index'))->withInput([
+                    "email" => "Такая почта уже существет",
+                ]);
+            }
+
             $user = new User();
 
             $user->name = $req->input('name');

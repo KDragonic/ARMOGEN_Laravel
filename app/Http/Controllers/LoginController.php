@@ -22,10 +22,21 @@ class LoginController extends Controller
     
     public function store(Request $req)
     {
-        $validation = Validator::make($req->all(), [
-            "email" => "required|email",
-            "password" => "required",
-        ]);
+        // $validation = Validator::make($req->all(), [
+        //     "email" => "required|email",
+        //     "password" => "required",
+        // ]);
+
+        if(Auth::attempt(
+            [
+            'email' => $req->input("email"), 
+            'password' => $req->input("password"),
+            ])) {
+                return redirect(route('user.index'));
+            } else redirect(route('login.index'))->withErrors($validation)->withInput([
+                "email" => "Неправильный логин или пароль",
+                "password" => "Неправильный логин или пароль",
+            ]);
 
         if ($validation->fails()) {
             return redirect(route('login.index'))->withErrors($validation)->withInput();

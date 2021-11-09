@@ -21,12 +21,12 @@
             @enderror
 
 
-            <input type="text" class="input" id="password" name="password" placeholder="Пароль">
+            <input type="password" class="input" id="password" name="password" placeholder="Пароль">
             @error('password')
                 <div class="danger_text">{{$message}}</div>
             @enderror
 
-            <input type="text" class="input" id="re_password" name="re_password" placeholder="Повторно пароль">
+            <input type="password" class="input" id="re_password" name="re_password" placeholder="Повторно пароль">
             @error('re_password')
                 <div class="danger_text">{{$message}}</div>
             @enderror

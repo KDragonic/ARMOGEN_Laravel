@@ -20,8 +20,8 @@
                 @enderror
 
                 <div class="checkbox">
-                    <input type="checkbox" name="gender" value=1 checked>
-                    <label for="radio-1">Запомнить меня</label>
+                    <input type="checkbox" name="remember" value=false>
+                    <label for="remember">Запомнить меня</label>
                 </div>
 
                 <input class="submit" type="submit" value="Войти">
