@@ -31,19 +31,16 @@ class LoginController extends Controller
             [
             'email' => $req->input("email"), 
             'password' => $req->input("password"),
-            ])) {
+            ], remember)) 
+            {
                 return redirect(route('user.index'));
-            } else redirect(route('login.index'))->withErrors($validation)->withInput([
-                "email" => "Неправильный логин или пароль",
-                "password" => "Неправильный логин или пароль",
-            ]);
-
-        if ($validation->fails()) {
-            return redirect(route('login.index'))->withErrors($validation)->withInput();
-        }
-        
-        if(Auth::attempt($validation)){
-            return redirect(route('posts.index'));
-        }      
+            } 
+            else 
+            { 
+                return redirect(route('login.index'))->withErrors([
+                    "email" => "Неправильный логин или пароль",
+                    "password" => "Неправильный логин или пароль"
+                ]); 
+            }
     }    
 }

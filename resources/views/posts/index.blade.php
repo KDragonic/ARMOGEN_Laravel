@@ -5,5 +5,5 @@
 @endsection
 
 @section('page-content')
-    Посты
+    <h1>Посты</h1>
 @endsection

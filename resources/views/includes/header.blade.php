@@ -25,7 +25,7 @@
 
     @auth
         <div class="items">
-            <a href="">
+            <a href="/posts">
                 <div class="item item_1"><img src="{{asset('img/Свиток.png')}}" alt="[img]"></div>
             </a>
             <a href="">
@@ -40,10 +40,10 @@
                 <img src="{{asset('img/Аватар.png')}}" alt="[img]">
             </div>
         </a> --}}
-        <div class="reg_log_icon">
-            <a href="{{route('logout.index')}}" class="text">
-                Выход
-            </a>
-        </div>
+        <a href="/user" class="user_icon">
+            <div>
+                <img src="{{asset('img/Аватар.png')}}" alt="[img]">
+            </div>
+        </a>
     @endauth
 </header>

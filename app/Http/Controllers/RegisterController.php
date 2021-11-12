@@ -11,7 +11,12 @@ class RegisterController extends Controller
 {
     public function index()
         {
-            return view('register.index');
+            if(Auth::check()){
+                return redirect(route('posts.index'));
+            }
+            else {
+                return view('register.index');
+            }
         }
     public function store(Request $req)
         {

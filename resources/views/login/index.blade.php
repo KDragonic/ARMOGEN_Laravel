@@ -5,16 +5,16 @@
 
 
 @section('page-content')
-        <div class="form_div">
+        <div class="сhapter">
             <span class="title">ВХОД</span>
             <form action="/login" method="post">
                 @csrf
-                <input type="text" class="input" id="email" placeholder="Почта">
+                <input type="text" class="input" id="email" name="email" placeholder="Почта">
                 @error('email')
                     <div class="danger_text">{{$message}}</div>
                 @enderror
 
-                <input type="password" class="input" id="password"  placeholder="Пароль">
+                <input type="password" class="input" id="password" name="password" placeholder="Пароль">
                 @error('password')
                     <div class="danger_text">{{$message}}</div>
                 @enderror

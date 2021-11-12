@@ -5,7 +5,7 @@
 
 
 @section('page-content')
-    <div class="form_div">
+    <div class="сhapter">
         <span class="title">РЕГЕСТРАЦИЯ</span>
          <form action="/register" method="post">
             @csrf

@@ -10,8 +10,14 @@ class UserController extends Controller
 {
     public function index()
     {
-            return view('user.index');
+        return view('user.index');
     }
+
+    public function user_id()
+    {
+        return view('user_id.index');
+    }
+
     public function logout()
     {
         Auth::logout();
