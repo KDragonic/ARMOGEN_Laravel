@@ -13,9 +13,9 @@ class UserController extends Controller
         return view('user.index');
     }
 
-    public function user_id()
+    public function indexID($id)
     {
-        return view('user_id.index');
+        return view('user.index');
     }
 
     public function logout()

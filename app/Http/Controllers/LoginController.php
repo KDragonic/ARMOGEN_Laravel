@@ -13,7 +13,7 @@ class LoginController extends Controller
     public function index()
         {
             if(Auth::check()){
-                return redirect(route('posts.index'));
+                return redirect(route('user.index'));
             }
             else {
                 return view('login.index');
@@ -31,7 +31,7 @@ class LoginController extends Controller
             [
             'email' => $req->input("email"), 
             'password' => $req->input("password"),
-            ], remember)) 
+            ], ($req->input("remember") == "on" ? true : false))) 
             {
                 return redirect(route('user.index'));
             } 

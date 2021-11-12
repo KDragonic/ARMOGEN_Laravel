@@ -23,10 +23,11 @@ Route::redirect('/', '/login')->name('home.redirect');
     
     Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
 
-    Route::get('/user/{id}', [UserController::class, 'index'])->name('user_id.index');
-
-Route::middleware('auth')->group(function () {
     
+    Route::middleware('auth')->group(function () {
+
+    SRoute::get('/user/{id}', [UserController::class, 'indexID'])->name('user.indexID');
+        
     Route::get('/user', [UserController::class, 'index'])->name('user.index');
 
     

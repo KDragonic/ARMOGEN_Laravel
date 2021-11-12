@@ -20,7 +20,7 @@
                 @enderror
 
                 <div class="checkbox">
-                    <input type="checkbox" name="remember" value=false>
+                    <input type="checkbox" name="remember" value="on">
                     <label for="remember">Запомнить меня</label>
                 </div>
 
