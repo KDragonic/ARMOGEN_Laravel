@@ -33,7 +33,7 @@ class LoginController extends Controller
             'password' => $req->input("password"),
             ], ($req->input("remember") == "on" ? true : false))) 
             {
-                return redirect(route('user.index'));
+                return redirect(route('user.index', Auth::user()->id));
             } 
             else 
             { 
